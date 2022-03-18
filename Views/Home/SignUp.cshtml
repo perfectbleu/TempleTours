@@ -1,0 +1,153 @@
+﻿@page
+@model TempleTours.Views.Home.SignUpModel
+@{
+    ViewData["Title"] = "Sign Up Page";
+}
+
+@*@model List<SignUpModel>*@
+
+@*twelve columns in bootstrap grid*@
+<div class="container">
+
+    @*row 1 - Title of Matrix*@
+    @*<div class=row>
+
+            <div class="col-lg-12 col-xs-6 border border-width:8px border-dark">
+                <h1 style="text-align:center">Stephen Covey's Time Management Matrix</h1>
+            </div>
+
+        </div>*@
+
+    @*row 1 - Date / Location / Time / Available Slot*@
+    <div class="row">
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+            <h3 style="text-align:center">Date (mm/dd/yyyy)</h3>
+
+        </div>
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+            <h3 style="text-align:center">Location</h3>
+        </div>
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+            <h3 style="text-align:center">Time (MDT)</h3>
+        </div>
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+            <h3 style="text-align:center">Available Slot</h3>
+        </div>
+
+    </div>
+
+    @*row 2 - Date Info / Location Info / Time Info / Available Slot Info *@
+    @*for each*@
+    <div class="row">
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+            <h3 style="text-align:center">Put Date here</h3>
+        </div>
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+
+            <h5 style="text-align:center">Put location here</h5>
+
+            @*row 3-1*@
+            <div class="row">
+
+                <!--<div class="col-9">-->
+                @*if statement*@
+
+                <!--@foreach (var x in Model)
+                    {
+                        @if (@x.Quadrant == 1 && @x.Completed == false)
+                        {
+                            <ul>
+                                <li>
+                                    <div class="col">
+                                        @x.Task
+                                        <a class="btn btn-primary" asp-controller="Home" asp-action="EditTask" asp-route-taskid="@x.TaskId">Edit</a>
+                                        <a class="btn btn-primary" asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a>
+                                    </div>
+                                    <br />
+                                </li>
+                            </ul>
+                        }
+
+                    }
+
+                </div>-->
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+
+            <h5 style="text-align:center">Put time here</h5>
+
+            @*row 3-2*@
+            <!--<div class="row">
+
+                <div class="col-9">-->
+            @*if statement*@
+            <!--@foreach (var x in Model)
+                    {
+                        @if (@x.Quadrant == 2 && @x.Completed == false)
+                        {
+                            <ul>
+                                <li>
+                                    <div class="col">
+                                        @x.Task
+                                        <a class="btn btn-primary" asp-controller="Home" asp-action="EdiTask " asp-route-taskid="@x.TaskId">Edit</a>
+                                        <a class="btn btn-primary" asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a>
+                                    </div>
+                                    <br />
+                                </li>
+                            </ul>
+                        }
+                    }
+                </div>
+
+            </div>-->
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 col-xs-6 border border-width:8px border-dark">
+
+        <h5 style="text-align:center">Put available slot here</h5>
+
+        @*row 3-2*@
+        <!--<div class="row">
+
+            <div class="col-9">-->
+        @*if statement*@
+        <!--@foreach (var x in Model)
+                {
+                    @if (@x.Quadrant == 2 && @x.Completed == false)
+                    {
+                        <ul>
+                            <li>
+                                <div class="col">
+                                    @x.Task
+                                    <a class="btn btn-primary" asp-controller="Home" asp-action="EdiTask " asp-route-taskid="@x.TaskId">Edit</a>
+                                    <a class="btn btn-primary" asp-controller="Home" asp-action="DeleteTask" asp-route-taskid="@x.TaskId">Delete</a>
+                                </div>
+                                <br />
+                            </li>
+                        </ul>
+                    }
+                }
+            </div>
+
+        </div>-->
+
+    </div>
+
+</div>
+
+
+
+
