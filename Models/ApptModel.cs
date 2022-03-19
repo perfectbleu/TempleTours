@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using TempleTours.Models;
 
-namespace TempleTours.Controllers
+namespace TempleTours.Models
 {
     public class ApptModel
     {
