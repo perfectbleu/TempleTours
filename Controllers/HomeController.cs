@@ -30,7 +30,6 @@ namespace TempleTours.Controllers
 
         public IActionResult ViewAppts()
         {
-
             var appts = aContext.Appts
                 .ToList();
             return View(appts);
@@ -40,6 +39,7 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult ApptForm()
         {
+            ViewBag.ApptTimes = aContext.ApptTimes.ToList();
             return View();
         }
 
@@ -55,6 +55,7 @@ namespace TempleTours.Controllers
             }
             else
             {
+                ViewBag.ApptTimes = aContext.ApptTimes.ToList();
                 return View(a);
             }
         }
@@ -64,6 +65,8 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult EditAppt(int apptid)
         {
+            ViewBag.ApptTimes = aContext.ApptTimes.ToList();
+
             var appt = aContext.Appts.Single(x => x.ApptId == apptid);
             return View("ApptForm", appt);
         }
