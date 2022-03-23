@@ -25,5 +25,7 @@ namespace TempleTours.Models
         // set up foreign key relationship
         public int TimeId { get; set; }
         public ApptTime ApptTime { get; set; }
+
+        public bool Available { get; set; }
     }
 }
