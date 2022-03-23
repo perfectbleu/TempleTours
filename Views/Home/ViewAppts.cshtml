@@ -2,7 +2,7 @@
     ViewData["Title"] = "View Appointments";
 }
 
-@model ApptModel
+@model List<ApptModel>
 
 
 <table class="table table-sm table-striped table-bordered">
@@ -20,36 +20,26 @@
     </thead>
 
     <tbody>
-        @*this is not right*@
-        @if (BookData?.Count() > 0)
-        {
-            @foreach (appts a in Model.ApptId)
-            {
-                <tr>
-                    <td>@a.ApptId</td>
-                    <td>@a.GroupName</td>
-                    <td>@a.GroupSize</td>
-                    <td>@a.Email</td>
-                    <td>@a.PhoneNumber</td>
 
-                    <td>
-                        <a class="btn btn-info btn-sml" asp-area="" asp-controller="Home" asp-action="EditAppt">Edit</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger btn-sm" asp-area="" asp-controller="Home" asp-action="DeleteAppt">Delete</a>
-                    </td>
-                </tr>
-            }
-        }
-        else
+        @foreach (var a in Model)
         {
             <tr>
-                <td colspan="5" class="text-center">No Appointments</td>
+                <td>@a.ApptId</td>
+                <td>@a.GroupName</td>
+                <td>@a.GroupSize</td>
+                <td>@a.Email</td>
+                <td>@a.PhoneNumber</td>
+
+                <td>
+                    <a class="btn btn-info btn-sml" asp-route-apptid="@a.ApptId"  asp-controller="Home" asp-action="EditAppt">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" asp-route-apptid="@a.ApptId" asp-controller="Home" asp-action="DeleteAppt">Delete</a>
+                </td>
             </tr>
         }
+
 
     </tbody>
 
 </table>
-
-<NavLink class="btn btn-primary" href="/admin/books/create">Create</NavLink>
