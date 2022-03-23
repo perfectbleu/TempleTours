@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TempleTours.Models;
+using TempleTours.Models.ViewModels;
 
 namespace TempleTours.Controllers
 {
@@ -25,8 +26,9 @@ namespace TempleTours.Controllers
 
         public IActionResult SignUp()
         {
-            var times = aContext.ApptTimes
+            var times = aContext.ApptTimes.Where(x => x.Available == true)
                 .ToList();
+
             return View(times);
         }
 
@@ -41,16 +43,24 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult ApptForm(int id)
         {
-            ViewBag.ApptTimes = aContext.ApptTimes.ToList();
-            return View(id);
+            var x = new ApptsViewModel
+            {
+                ApptTime = aContext.ApptTimes.Single(x => x.TimeId == id),
+
+                ApptModel = new ApptModel()
+            };
+
+            return View(x);
         }
 
         [HttpPost]
-        public IActionResult ApptForm(ApptModel a)
+        public IActionResult ApptForm(ApptsViewModel a)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
-                aContext.Add(a);
+                a.ApptTime.Available = false;
+
+                aContext.Add(a.ApptModel);
                 aContext.SaveChanges();
 
                 return RedirectToAction("ViewAppts");
@@ -67,10 +77,12 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult EditAppt(int id)
         {
-            ViewBag.ApptTimes = aContext.ApptTimes.ToList();
+            var x = new ApptsViewModel
+            {
+                ApptModel = aContext.Appts.Single(x => x.ApptId == id)
+            };
 
-            var appt = aContext.Appts.Single(x => x.ApptId == id);
-            return View("ApptForm", appt);
+            return View("ApptForm", x);
         }
 
         [HttpPost]

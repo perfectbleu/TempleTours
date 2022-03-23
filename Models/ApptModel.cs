@@ -22,9 +22,5 @@ namespace TempleTours.Models
 
         public string PhoneNumber { get; set; }
 
-        // set up foreign key relationship
-        public int TimeId { get; set; }
-        public ApptTime ApptTime { get; set; }
-
     }
 }
