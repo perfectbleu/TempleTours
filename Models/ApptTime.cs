@@ -11,6 +11,6 @@ namespace TempleTours.Models
         public string DayOfAppt { get; set; }
         public string TimeOfAppt { get; set; }
 
-        public bool Available { get; set; }
+        public bool Available { get; set; } = true;
     }
 }

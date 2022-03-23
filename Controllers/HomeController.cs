@@ -25,9 +25,9 @@ namespace TempleTours.Controllers
 
         public IActionResult SignUp()
         {
-            var appts = aContext.Appts
+            var times = aContext.ApptTimes
                 .ToList();
-            return View(appts);
+            return View(times);
         }
 
         public IActionResult ViewAppts()
