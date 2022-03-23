@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Sign Up Page";
+}
+
+@model List<ApptModel>
+@*twelve columns in bootstrap grid*@
+
+<div class="container">
+
+    @*row 1 - Title of Site *@
+    <div class=row>
+
+        <div class="col-lg-12 col-xs-6 border border-width:8px border-dark">
+            <h1 style="text-align:center">Temple Tours</h1>
+        </div>
+
+    </div>
+
+    @*row 2 - Date / Location / Time *@
+    <div class="row">
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+            <h3 style="text-align:center">Date (mm/dd/yyyy)</h3>
+
+        </div>
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+            <h3 style="text-align:center">Location</h3>
+        </div>
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+            <h3 style="text-align:center">Time (MDT)</h3>
+        </div>
+
+    </div>
+
+
+    @*row 3 - Date Info / Location Info / Time Info *@
+    @*for each*@
+    <div class="row">
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+            @*if statement*@
+
+            @foreach (var x in Model)
+            {
+                <ul>
+                    <li>
+                        <div class="col">
+                            @x.Date
+                        </div>
+                        <br />
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+
+            @foreach (var x in Model)
+            {
+                <ul>
+                    <li>
+                        <div class="col">
+                            @x.Location
+                        </div>
+                        <br />
+                    </li>
+                </ul>
+            }
+
+        </div>
+
+        <div class="col-lg-4 col-xs-4 border border-width:8px border-dark">
+            @*if statement*@
+
+            @foreach (var x in Model)
+            {
+                @if (@x.Available == true)
+                {
+                    <ul>
+                        <li>
+                            <div class="col">
+                                <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-taskid="@x.ApptId">@x.ApptTime</a>
+                            </div>
+                            <br />
+                        </li>
+                    </ul>
+                }
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
