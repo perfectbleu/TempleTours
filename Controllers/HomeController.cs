@@ -61,6 +61,7 @@ namespace TempleTours.Controllers
                 a.ApptTime.Available = false;
 
                 aContext.Add(a.ApptModel);
+                aContext.Add(a.ApptTime);
                 aContext.SaveChanges();
 
                 return RedirectToAction("ViewAppts");
