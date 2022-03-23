@@ -58,7 +58,7 @@ namespace TempleTours.Controllers
         {
             if (ModelState.IsValid) 
             {
-                a.ApptTime.Available = false;
+                //a.ApptTime.Available = false;
 
                 aContext.Add(a.ApptModel);
                 aContext.Add(a.ApptTime);
