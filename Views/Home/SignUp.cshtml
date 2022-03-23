@@ -2,7 +2,7 @@
     ViewData["Title"] = "Sign Up Page";
 }
 
-@model List<ApptModel>
+@model List<ApptTime>
 @*twelve columns in bootstrap grid*@
 
 <div class="container">
@@ -43,7 +43,7 @@
             <ul>
                 <li>
                     <div class="col">
-                        @x.ApptTime.DayOfAppt
+                        @x.DayOfAppt
                     </div>
                     <br />
                 </li>
@@ -61,7 +61,7 @@
                 <ul>
                     <li>
                         <div class="col">
-                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-apptid="@x.ApptId">@x.ApptTime.TimeOfAppt</a>
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-timeid="@x.TimeId">@x.TimeOfAppt</a>
                         </div>
                         <br />
                     </li>

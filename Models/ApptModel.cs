@@ -26,6 +26,5 @@ namespace TempleTours.Models
         public int TimeId { get; set; }
         public ApptTime ApptTime { get; set; }
 
-        public bool Available { get; set; }
     }
 }

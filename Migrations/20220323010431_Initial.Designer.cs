@@ -9,8 +9,8 @@ using TempleTours.Models;
 namespace TempleTours.Migrations
 {
     [DbContext(typeof(ApptContext))]
-    [Migration("20220323004545_fixedchanges")]
-    partial class fixedchanges
+    [Migration("20220323010431_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,9 +25,6 @@ namespace TempleTours.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("ApptTimeTimeId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Available")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
@@ -61,6 +58,9 @@ namespace TempleTours.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("DayOfAppt")
                         .HasColumnType("TEXT");
 
@@ -75,546 +75,637 @@ namespace TempleTours.Migrations
                         new
                         {
                             TimeId = 1,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 2,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 3,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 4,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 5,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 6,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 7,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 8,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 9,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 10,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 11,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 12,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 13,
+                            Available = false,
                             DayOfAppt = "Sunday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 14,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 15,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 16,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 17,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 18,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 19,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 20,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 21,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 22,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 23,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 24,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 25,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 26,
+                            Available = false,
                             DayOfAppt = "Monday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 27,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 28,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 29,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 30,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 31,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 32,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 33,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 34,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 35,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 36,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 37,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 38,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 39,
+                            Available = false,
                             DayOfAppt = "Tuesday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 40,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 41,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 42,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 43,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 44,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 45,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 46,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 47,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 48,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 49,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 50,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 51,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 52,
+                            Available = false,
                             DayOfAppt = "Wednesday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 53,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 54,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 55,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 56,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 57,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 58,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 59,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 60,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 61,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 62,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 63,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 64,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 65,
+                            Available = false,
                             DayOfAppt = "Thursday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 66,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 67,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 68,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 69,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 70,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 71,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 72,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 73,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 74,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 75,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 76,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 77,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 78,
+                            Available = false,
                             DayOfAppt = "Friday",
                             TimeOfAppt = "8:00PM"
                         },
                         new
                         {
                             TimeId = 79,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "8:00AM"
                         },
                         new
                         {
                             TimeId = 80,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "9:00AM"
                         },
                         new
                         {
                             TimeId = 81,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "10:00AM"
                         },
                         new
                         {
                             TimeId = 82,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "11:00AM"
                         },
                         new
                         {
                             TimeId = 83,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "12:00PM"
                         },
                         new
                         {
                             TimeId = 84,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "1:00PM"
                         },
                         new
                         {
                             TimeId = 85,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "2:00PM"
                         },
                         new
                         {
                             TimeId = 86,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "3:00PM"
                         },
                         new
                         {
                             TimeId = 87,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "4:00PM"
                         },
                         new
                         {
                             TimeId = 88,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "5:00PM"
                         },
                         new
                         {
                             TimeId = 89,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "6:00PM"
                         },
                         new
                         {
                             TimeId = 90,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "7:00PM"
                         },
                         new
                         {
                             TimeId = 91,
+                            Available = false,
                             DayOfAppt = "Saturday",
                             TimeOfAppt = "8:00PM"
                         });
