@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TempleTours.Models;
 
 namespace TempleTours.Migrations
 {
     [DbContext(typeof(ApptContext))]
-    partial class ApptContextModelSnapshot : ModelSnapshot
+    [Migration("20220323004545_fixedchanges")]
+    partial class fixedchanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
