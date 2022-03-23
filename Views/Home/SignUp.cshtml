@@ -18,7 +18,7 @@
 
     @*row 2 - Date / Location / Time *@
 
-    <table>
+    <table class="table table-sm table-striped table-bordered">
         <thead>
             <tr>
                     <th>
@@ -38,38 +38,29 @@
     @*row 3 - Date Info / Location Info / Time Info *@
     @*for each*@
 
-        <tbody>
-                @*if statement*@
+    <tbody>
+        @*if statement*@
 
-                @foreach (var x in Model)
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>
+                    <div class="col">
+                        @x.DayOfAppt
+                    </div>
+                </td>
+
+                @if (@x.Available == true)
                 {
-                    <tr>
-                        <td>
-                            <div class="col">
-                                @x.DayOfAppt
-                            </div>
-                        </td>
-                    </tr>
+                    <td>
+                        <div class="col">
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-id="@x.TimeId">@x.TimeOfAppt</a>
+                        </div>
+                    </td>
                 }
-
-
-                @*if statement*@
-
-                @foreach (var x in Model)
-                {
-                    @if (@x.Available == true)
-                    {
-                        <tr>
-                            <td>
-                                <div class="col">
-                                    <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-timeid="@x.TimeId">@x.TimeOfAppt</a>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-
-                }
-        </tbody>
+            </tr>
+            }
+    </tbody>
     </table>
 </div>
 

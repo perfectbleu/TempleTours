@@ -39,10 +39,10 @@ namespace TempleTours.Controllers
 
         // ADD APPOINTMENT
         [HttpGet]
-        public IActionResult ApptForm()
+        public IActionResult ApptForm(int id)
         {
             ViewBag.ApptTimes = aContext.ApptTimes.ToList();
-            return View();
+            return View(id);
         }
 
         [HttpPost]
@@ -65,11 +65,11 @@ namespace TempleTours.Controllers
 
         // EDIT APPOINTMENT
         [HttpGet]
-        public IActionResult EditAppt(int apptid)
+        public IActionResult EditAppt(int id)
         {
             ViewBag.ApptTimes = aContext.ApptTimes.ToList();
 
-            var appt = aContext.Appts.Single(x => x.ApptId == apptid);
+            var appt = aContext.Appts.Single(x => x.ApptId == id);
             return View("ApptForm", appt);
         }
 
@@ -85,9 +85,9 @@ namespace TempleTours.Controllers
 
         // DELETE APPOINTMENT
         [HttpGet]
-        public IActionResult DeleteAppt(int apptid)
+        public IActionResult DeleteAppt(int id)
         {
-            var appt = aContext.Appts.Single(x => x.ApptId == apptid);
+            var appt = aContext.Appts.Single(x => x.ApptId == id);
             return View(appt);
         }
 

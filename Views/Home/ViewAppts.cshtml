@@ -31,10 +31,10 @@
                 <td>@a.PhoneNumber</td>
 
                 <td>
-                    <a class="btn btn-info btn-sml" asp-route-apptid="@a.ApptId"  asp-controller="Home" asp-action="EditAppt">Edit</a>
+                    <a class="btn btn-info btn-sml" asp-controller="Home" asp-action="EditAppt" asp-route-id="@a.ApptId">Edit</a>
                 </td>
                 <td>
-                    <a class="btn btn-danger btn-sm" asp-route-apptid="@a.ApptId" asp-controller="Home" asp-action="DeleteAppt">Delete</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="DeleteAppt" asp-route-id="@a.ApptId">Delete</a>
                 </td>
             </tr>
         }

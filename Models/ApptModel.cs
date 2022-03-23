@@ -14,7 +14,7 @@ namespace TempleTours.Models
         public string GroupName { get; set; }
 
         [Required]
-        [MaxLength(15, ErrorMessage = "Maximum Group Size is 15")]
+        [Range(0, 15)]
         public int GroupSize { get; set; }
 
         [Required]
