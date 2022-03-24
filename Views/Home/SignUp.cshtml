@@ -43,24 +43,24 @@
 
         @foreach (var x in Model)
         {
-            <tr>
-                <td>
-                    <div class="col">
-                        @x.DayOfAppt
-                    </div>
-                </td>
-
-                @if (@x.Available == true)
-                {
+            @if (@x.Available == true)
+            {
+                <tr>
                     <td>
                         <div class="col">
-                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-id="@x.ApptId">@x.TimeOfAppt</a>
+                            @x.DayOfAppt
                         </div>
                     </td>
-                }
-            </tr>
-            }
-    </tbody>
+
+                    <td>
+                        <div class="col">
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="EditAppt" asp-route-apptid="@x.ApptId">@x.TimeOfAppt</a>
+                        </div>
+                    </td>
+                </tr>
+             }
+         }
+        </tbody>
     </table>
 </div>
 

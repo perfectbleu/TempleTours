@@ -10,7 +10,12 @@
 
     <div asp-validation-summary="All" class="text-danger"></div>
 
-    @*<div>Time Slot: @Model.DayOfAppt - @Model.TimeOfAppt</div>*@
+    <div>
+        <label>Time Slot: @Model.DayOfAppt - @Model.TimeOfAppt</label>
+        @*<input readonly asp-for="DayOfAppt" />*@
+    </div>
+
+    <input type="hidden" asp-for="ApptId" />
 
     <div class="form-group">
         <label asp-for="GroupName">Group Name:</label>
@@ -32,7 +37,9 @@
         <input asp-for="PhoneNumber" class="form-control" />
     </div>
 
-    @*<input asp-for="ApptTime.Available" type="hidden"/>*@
+    <input asp-for="Available" type="hidden"/>
+    <input type="hidden" asp-for="DayOfAppt" />
+    <input type="hidden" asp-for="TimeOfAppt" />
 
     <div>
         <input class="btn btn-primary" type="submit" value="Submit" />

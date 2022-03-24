@@ -35,16 +35,18 @@ namespace TempleTours.Controllers
 
         public IActionResult ViewAppts()
         {
-            var appts = aContext.Appts.ToList();
+            var appts = aContext.Appts
+                .Where(x => x.Available == false)
+                .ToList();
             return View(appts);
         }
 
         // ADD APPOINTMENT
         [HttpGet]
-        public IActionResult ApptForm(int id)
+        public IActionResult ApptForm(int apptid)
         {
             ViewBag.Appts = aContext.Appts.ToList();
-            return View();
+            return RedirectToAction("EditAppt", apptid);
 
         }
 
@@ -53,7 +55,8 @@ namespace TempleTours.Controllers
         {
             if (ModelState.IsValid)
             {
-                aContext.Add(a);
+                a.Available = false;
+                aContext.Update(a);
                 aContext.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -68,9 +71,9 @@ namespace TempleTours.Controllers
 
         // EDIT APPOINTMENT
         [HttpGet]
-        public IActionResult EditAppt(int id)
+        public IActionResult EditAppt(int apptid)
         {
-            var appt = aContext.Appts.Single(x => x.ApptId == id);
+            var appt = aContext.Appts.Single(x => x.ApptId == apptid);
 
             return View("ApptForm", appt);
         }
@@ -87,16 +90,22 @@ namespace TempleTours.Controllers
 
         // DELETE APPOINTMENT
         [HttpGet]
-        public IActionResult DeleteAppt(int id)
+        public IActionResult DeleteAppt(int apptid)
         {
-            var appt = aContext.Appts.Single(x => x.ApptId == id);
+            var appt = aContext.Appts.Single(x => x.ApptId == apptid);
             return View(appt);
         }
 
         [HttpPost]
         public IActionResult DeleteAppt(ApptModel a)
         {
-            aContext.Appts.Remove(a);
+            a.GroupName = null;
+            a.GroupSize = 0;
+            a.Email = null;
+            a.PhoneNumber = null;
+            a.Available = true;
+
+            aContext.Update(a);
             aContext.SaveChanges();
 
             return RedirectToAction("ViewAppts");
