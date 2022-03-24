@@ -56,7 +56,7 @@ namespace TempleTours.Controllers
                 aContext.Add(a);
                 aContext.SaveChanges();
 
-                return RedirectToAction("ViewAppts");
+                return RedirectToAction("Index");
             }
             else
             {
