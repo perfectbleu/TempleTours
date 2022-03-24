@@ -26,7 +26,7 @@ namespace TempleTours.Controllers
 
         public IActionResult SignUp()
         {
-            var times = aContext.ApptTimes
+            var times = aContext.Appts
                 .Where(x => x.Available == true)
                 .ToList();
 
@@ -56,7 +56,7 @@ namespace TempleTours.Controllers
                 aContext.Add(a);
                 aContext.SaveChanges();
 
-                return RedirectToAction("TaskQuadrants");
+                return RedirectToAction("ViewAppts");
             }
             else
             {
