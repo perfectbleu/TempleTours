@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,8 @@ namespace TempleTours.Controllers
 
         public IActionResult SignUp()
         {
-            var times = aContext.ApptTimes.Where(x => x.Available == true)
+            var times = aContext.ApptTimes
+                .Where(x => x.Available == true)
                 .ToList();
 
             return View(times);
@@ -34,8 +36,7 @@ namespace TempleTours.Controllers
 
         public IActionResult ViewAppts()
         {
-            var appts = aContext.Appts
-                .ToList();
+            var appts = aContext.Appts.ToList();
             return View(appts);
         }
 
@@ -61,7 +62,7 @@ namespace TempleTours.Controllers
                 //a.ApptTime.Available = false;
 
                 aContext.Add(a.ApptModel);
-                aContext.Add(a.ApptTime);
+                //aContext.Add(a.ApptTime);
                 aContext.SaveChanges();
 
                 return RedirectToAction("ViewAppts");
