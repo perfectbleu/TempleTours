@@ -2,7 +2,7 @@
     ViewData["Title"] = "Sign Up Page";
 }
 
-@model List<ApptTime>
+@model List<ApptModel>
 @*twelve columns in bootstrap grid*@
 
 <div class="container">
@@ -54,7 +54,7 @@
                 {
                     <td>
                         <div class="col">
-                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-id="@x.TimeId">@x.TimeOfAppt</a>
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="ApptForm" asp-route-id="@x.ApptId">@x.TimeOfAppt</a>
                         </div>
                     </td>
                 }

@@ -22,5 +22,10 @@ namespace TempleTours.Models
 
         public string PhoneNumber { get; set; }
 
+        //time of appointment info
+        public string DayOfAppt { get; set; }
+        public string TimeOfAppt { get; set; }
+        public bool Available { get; set; } = true;
+
     }
 }
